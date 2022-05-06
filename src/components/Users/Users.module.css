@@ -1,0 +1,13 @@
+.online {
+    color: green;
+}
+
+.offline {
+    color: red;
+}
+
+.td, .th {
+    padding-right: 4%;
+    margin: 10px;
+}
+

@@ -1,0 +1,9 @@
+.logout {
+    /* margin-top: 2%; */
+    margin-left: 40%;
+    text-align: right;
+}
+
+.LogoutComponent {
+    display: inline;
+}
