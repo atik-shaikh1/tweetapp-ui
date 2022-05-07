@@ -1,0 +1,1 @@
+export const API_URL = 'http://tweetapp-loadBalancer-1189026459.us-east-1.elb.amazonaws.com'
