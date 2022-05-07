@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { API_URL } from '../Constants'
 
 class UserService {
 
     getAllUsers() {
-        return axios.get('http://localhost:8080/api/v1.0/tweets/users/all')
+        return axios.get(`${API_URL}/api/v1.0/tweets/users/all`)
     }
 
 }

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { v4 as uuid } from 'uuid';
+import { API_URL } from '../Constants'
 
 class TweetService {
 
@@ -8,7 +9,7 @@ class TweetService {
     
         let user = JSON.parse(savedUserJsonString);
         
-        return axios.post('http://localhost:8080/post/tweet', 
+        return axios.post(`${API_URL}/post/tweet`, 
             {
                 "id": uuid(),
                 'tweet': tweet, 
@@ -28,16 +29,16 @@ class TweetService {
     
         let user = JSON.parse(savedUserJsonString);
 
-        return axios.get(`http://localhost:8080/myTweets/${user.email}`)
+        return axios.get(`${API_URL}/myTweets/${user.email}`)
     }
 
     getUserTweets(email) {
 
-        return axios.get(`http://localhost:8080/myTweets/${email}`)
+        return axios.get(`${API_URL}/myTweets/${email}`)
     }
 
     getAllTweets() {
-        return axios.get(`http://localhost:8080/tweets/all`)
+        return axios.get(`${API_URL}/tweets/all`)
     }
 
     replyTweet(id, tweet) {
@@ -45,7 +46,7 @@ class TweetService {
     
         let user = JSON.parse(savedUserJsonString);
         
-        return axios.post(`http://localhost:8080/reply/tweet/${id}`, 
+        return axios.post(`${API_URL}/reply/tweet/${id}`, 
             {
                 "id": uuid(),
                 'tweet': tweet, 
@@ -59,7 +60,7 @@ class TweetService {
     }
 
     getReplies(id) {
-        return axios.post(`http://localhost:8080/tweet/replies/${id}`)
+        return axios.post(`${API_URL}/tweet/replies/${id}`)
     }
 
     likeTweet(id) {
@@ -67,7 +68,7 @@ class TweetService {
     
         let user = JSON.parse(savedUserJsonString);
 
-        return axios.post(`http://localhost:8080/tweet/like/${id}`, 
+        return axios.post(`${API_URL}/tweet/like/${id}`, 
         {
             
             "firstName": user.firstName, 
@@ -83,13 +84,13 @@ class TweetService {
     
         let user = JSON.parse(savedUserJsonString);
         
-        return axios.put('http://localhost:8080/update/tweet', tweet)
+        return axios.put(`${API_URL}/update/tweet`, tweet)
 
 
     }
 
     deleteTweet(id) {
-        return axios.delete(`http://localhost:8080/delete/tweet/${id}`)
+        return axios.delete(`${API_URL}/delete/tweet/${id}`)
     }
     
 }

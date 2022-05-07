@@ -1,9 +1,10 @@
 import axios from "axios"
+import { API_URL } from '../Constants'
 
 class RegisterService {
 
     register(user) {
-        return axios.post('http://localhost:8080/register', 
+        return axios.post(`${API_URL}/register`, 
             {
                 "firstName" : user.firstName, 
                 "lastName" : user.lastName,
