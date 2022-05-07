@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { API_URL } from '../Constants'
 
 class LoginLogoutService {
 
@@ -6,7 +7,7 @@ class LoginLogoutService {
     login(email, password) {
         console.log('inside login', email, password)
 
-        return axios.post('http://localhost:8080/login', 
+        return axios.post(`${API_URL}/login`, 
             {
                 "email" : email, 
                 "password" : password
@@ -24,7 +25,7 @@ class LoginLogoutService {
 
         console.log("log out ", user)
 
-        return axios.post('http://localhost:8080/logout', 
+        return axios.post(`${API_URL}/logout`, 
             { 
                 "email" : user.email
             }

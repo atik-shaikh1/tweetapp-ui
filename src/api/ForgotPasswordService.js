@@ -1,10 +1,11 @@
 import axios from "axios"
+import { API_URL } from '../Constants'
 
 class ForgotPasswordService {
 
 
     resetPassword(email, password) {
-       return axios.post(`http://localhost:8080/resetPassword`, {email, password})
+       return axios.post(`${API_URL}/resetPassword`, {email, password})
     }
 
 }

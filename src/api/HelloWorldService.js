@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { API_URL } from '../Constants'
 
 class HelloWorldService {
 
@@ -8,7 +9,7 @@ class HelloWorldService {
 
         
 
-        return axios.get('http://localhost:8080/hello-world');
+        return axios.get(`${API_URL}/hello-world`);
             
 
         
