@@ -185,7 +185,7 @@ class AllTweetsComponent extends Component {
                                 <span className={TweetCss.userName} onClick={() => this.userTweets(this.state.mainTweet)}>
                                     <b>{this.state.mainTweet.user.firstName} {this.state.mainTweet.user.lastName}</b>
                                 </span>
-                                <span  className={TweetCss.fromNow}>{moment(this.state.mainTweet.postTime).fromNow()}</span>
+                                <span  className={TweetCss.fromNow}>{moment(this.state.mainTweet.postTime).from(new Date())}</span>
                             </div>
                             <div className={TweetCss.tweetText}>{this.state.mainTweet.tweet}</div>
                         </div>
